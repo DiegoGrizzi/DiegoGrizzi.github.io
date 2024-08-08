@@ -1,0 +1,92 @@
+.player-lists {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #053f57;
+  border: 3px solid #04d9ff;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #04d9ff;
+}
+
+.player-lists h3 {
+  color: #f953a6;
+  font-family: "Orbitron", sans-serif;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.confirmed-list,
+.waiting-list {
+  width: 45%;
+  padding: 10px;
+  background-color: #053f57;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #04d9ff;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  text-transform: capitalize;
+}
+
+ul li {
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #2b2b52;
+  color: white;
+  font-family: "Orbitron", sans-serif;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #04d9ff;
+}
+
+/* ul li:hover {
+  background-color: #131324;
+} */
+
+ul li {
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #053f57;
+  color: white;
+  font-family: "Orbitron", sans-serif;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #04d9ff;
+  display: flex;
+  justify-content: space-between; /* Para alinhar o texto e o ícone */
+  align-items: center; /* Para centralizar verticalmente */
+}
+
+ul li .delete-icon {
+  margin-left: 10px;
+  color: #fc75b8;
+  cursor: pointer;
+  font-size: 22px;
+  transition: color 0.3s;
+}
+
+ul li .delete-icon:hover {
+  color: #e60073; /* Cor ao passar o mouse */
+}
+
+.player-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.player-actions button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  background-color: #ff0080;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff0080;
+}
+
+.player-actions button:hover {
+  background-color: #e60073;
+}
