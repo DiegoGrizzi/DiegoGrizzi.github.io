@@ -10,12 +10,16 @@ function showNextImage() {
 setInterval(showNextImage, 3000); // troca de imagem a cada 3 segundos
 
 // Desbloqueia autoplay da música após primeiro clique
-// ========== Início automático da música ==========
+// ========== Inicia a música ao tocar na tela ==========
 window.addEventListener("DOMContentLoaded", () => {
   const audio = document.getElementById("bg-music");
   audio.volume = 0.5; // ajuste o volume se quiser
-  audio.play().catch((err) => {
-    console.warn("Autoplay bloqueado, tentando novamente após interação");
+
+  // Adiciona um evento de clique para iniciar a música
+  document.body.addEventListener("click", () => {
+    audio.play().catch((err) => {
+      console.warn("Erro ao tentar iniciar o áudio:", err);
+    });
   });
 });
 
