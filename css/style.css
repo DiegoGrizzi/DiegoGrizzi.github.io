@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body {
+  background: linear-gradient(135deg, #1f0c2b, #3b0a36, #512e5f, #332d33);
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease infinite;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  text-align: center;
+  overflow-x: hidden;
+  position: relative;
+} */
+
+body {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+}
+
+@keyframes gradientMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  z-index: 2;
+  position: relative;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 736px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* mostra toda a imagem, mesmo se for vertical */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  border-radius: 20px;
+}
+
+
+.carousel-image.active {
+  opacity: 1;
+  
+  z-index: 1;
+}
+
+
+.romantic-text {
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.romantic-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.romantic-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Corações no fundo */
+.hearts-background::before,
+.hearts-background::after {
+  content: "💖";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 2rem;
+  animation: floatHearts 10s linear infinite;
+  z-index: 0;
+  opacity: 0.2;
+}
+
+@keyframes floatHearts {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+/* Corações animados */
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  transform: rotate(45deg);
+  animation: floatUp 2s ease-out forwards;
+  opacity: 0.8;
+  z-index: 999;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: -10px;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-600px) scale(0.5) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
